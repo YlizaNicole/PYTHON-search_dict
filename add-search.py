@@ -36,7 +36,7 @@ while True:
             save_dict(dict)
         elif ask == 'n':
             print(dict)  
-        print("Oh well, nothing else to do here then.")
+        print("SAVED!")
         break
 #Option 3: Ask the user if want to exit or retry.
     if user_input ==2:
