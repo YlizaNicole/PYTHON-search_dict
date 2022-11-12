@@ -13,4 +13,8 @@
 # - Option 2: Search, ask full name then display the record
 # - Option 3: Ask the user if want to exit or retry.
 
-#trying to commit a single item
+# - Display a menu of options
+print("MENU")
+print ("1 = Add an Item")
+print ("2 = Search")
+print ("3 = Exit")
