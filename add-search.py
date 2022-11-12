@@ -14,7 +14,11 @@
 # - Option 3: Ask the user if want to exit or retry.
 
 # - Display a menu of options
-print("MENU")
-print ("1 = Add an Item")
-print ("2 = Search")
-print ("3 = Exit")
+
+operation = input('''
+    MENU
+    [1] 1 = Add an Item 
+    [2] "2 = Search"
+    [3] "3 = Exit"
+    ''')
+print(operation)
