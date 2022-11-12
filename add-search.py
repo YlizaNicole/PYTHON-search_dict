@@ -1,48 +1,52 @@
 #Write a python program for contact tracing:
-# - Display a menu of options
-#Menu:
-# 1 -> Add an item
-# 2 -> Search
-# 3 -> Exit (y/n)
-# - Allow user to select item in the menu (check if valid)
-# - Perform the selected option
-# - Option 1: Ask personal data for contact tracing (Listed are sample only, add more)
+
+import shelve
+import dbm 
+
 # Use dictionary to store the info
 # Use the full name as key
-# The value is another dictionary of personal information
-# - Option 2: Search, ask full name then display the record
-# - Option 3: Ask the user if want to exit or retry.
-
+def save_dict(to_save):  
+    with shelve.open('shelve2.db', 'c') as s: 
+                s['Dict'] = to_save  
+def load_dict():  
+        with shelve.open('shelve2.db', 'r') as s:  
+                saved_dict = s['Dict']  
+                return saved_dict   
+dict = load_dict() 
 # - Display a menu of options
-my_dict = {}
-my_dict2= my_dict
-my_dict2={}
-
 print("MENU")
 print ("1 = Add an Item")
 print ("2 = Search")
 print ("3 = Exit")
 
 # - Allow user to select item in the menu (check if valid)
-print()
-user_input= int(input("pick a number: "))
+
 
 # - Perform the selected option
 # - Option 1: Ask personal data for contact tracing (Listed are sample only, add more)
-# Use dictionary to store the info
-# Use the full name as key
 while True:
-    if user_input ==1:
-       for i in range (4):
-            line1 = input("")
-            line2 = input("")
-            my_dict[line1] = line2
-            print ("SAVED!")
+    print()
+    user_input= int(input("pick a number: "))
+    if user_input ==1: 
+        ask = input('add item(y/n): ') 
+        if ask == 'y':
+            keywords = input('keys: ')
+            Values = input('values: ')
+            dict[keywords] = Values
+            save_dict(dict)
+        elif ask == 'n':
+            print(dict)  
+        print("Oh well, nothing else to do here then.")
+        break
+#Option 3: Ask the user if want to exit or retry.
     if user_input ==2:
-        search= input("keyword")
-        print(my_dict2.keys(search))
+        search= input("Search an Keyword: ")
+        print(dict.get(search))
+        break
+#- Option 3: Ask the user if want to exit or retry.
     if user_input==3:
         question= input("exit? (y/n)")
         if question == "y":
-            break
+            print("bye bye ")
+        break
 
