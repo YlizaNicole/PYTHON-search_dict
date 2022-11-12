@@ -6,11 +6,11 @@ import dbm
 # Use dictionary to store the info
 # Use the full name as key
 def save_dict(to_save):  
-    with shelve.open('shelve2.db', 'c') as s: 
-                s['Dict'] = to_save  
+    with shelve.open("shelve2.db", "c") as s: 
+                s["Dict"] = to_save  
 def load_dict():  
-        with shelve.open('shelve2.db', 'r') as s:  
-                saved_dict = s['Dict']  
+        with shelve.open("shelve2.db", "r") as s:  
+                saved_dict = s["Dict"]  
                 return saved_dict   
 dict = load_dict() 
 data= list(dict.values())
@@ -30,19 +30,25 @@ while True:
     print()
     user_input= int(input("pick a number: "))
     if user_input ==1: 
-        ask = input('add item(y/n): ') 
-        print("Please Enter your Your [Name, Age, Email, Location,] First then tag it")
-        if ask == 'y':
-            for i in range (4):
-                keywords = input('keys: ')
-                Values = input('values: ')
+        ask = input("add item(y/n): ") 
+        if ask == "y":
+                keywords = input("Input full name here: ")
+                Values = ("Full Name")
+                dict[keywords] = Values
+                keywords = print("Age: ")
+                Values = input("")
+                dict[keywords] = Values
+                keywords = print("Address: ")
+                Values = input("")
+                keywords = print("Email: ")
+                Values = input("")
                 dict[keywords] = Values
                 save_dict(dict)
-        elif ask == 'n':
+        elif ask == "n":
             print(dict)  
         print("SAVED!")
         break
-#Option 3: Ask the user if want to exit or retry.
+#Option 2: Ask the user if want to exit or retry.
     if user_input ==2:
         search= input("Search an Keyword: ")
         print(dict.get(search))
@@ -50,7 +56,6 @@ while True:
         print(dict.get("Address"))
         print(dict.get("Email"))
         
-      
        
        
      
