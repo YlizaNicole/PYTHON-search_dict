@@ -34,31 +34,26 @@ while True:
         if ask == "y":
                 keywords = input("Input full name here: ")
                 Values = ("Full Name")
-                dict[keywords] = Values
-                keywords = print("Age: ")
-                Values = input("")
-                dict[keywords] = Values
-                keywords = print("Address: ")
-                Values = input("")
-                keywords = print("Email: ")
-                Values = input("")
+                keywords = ("age")
+                Values = input("Age:")
+                keywords = ("Address: ")
+                Values = input("Address:")
+                keywords = ("Email: ")
+                Values = input("Email:")
                 dict[keywords] = Values
                 save_dict(dict)
         elif ask == "n":
             print(dict)  
         print("SAVED!")
         break
-#Option 2: Ask the user if want to exit or retry.
+#Option 2: Search, ask full name then display the record
     if user_input ==2:
-        search= input("Search an Keyword: ")
+        search= input("Enter Your name to search for your infos ")
         print(dict.get(search))
         print(dict.get("Age"))
         print(dict.get("Address"))
         print(dict.get("Email"))
-        
-       
-       
-     
+        break
 #- Option 3: Ask the user if want to exit or retry.
     if user_input==3:
         question= input("exit? (y/n)")
