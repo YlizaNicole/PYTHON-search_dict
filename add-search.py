@@ -17,7 +17,7 @@ data= list(dict.values())
 
 
 # - Display a menu of options
-print("MENU")
+Menu= print("MENU")
 print ("1 = Add an Item")
 print ("2 = Search")
 print ("3 = Exit")
@@ -32,7 +32,7 @@ while True:
     if user_input ==1: 
         ask = input("add item(y/n): ") 
         if ask == "y":
-                keywords = input("Input full name here: ")
+                keywords = input("full name: ")
                 Values = ("Full Name")
                 keywords = ("age")
                 Values = input("Age:")
@@ -45,15 +45,14 @@ while True:
         elif ask == "n":
             print(dict)  
         print("SAVED!")
-        break
+        
 #Option 2: Search, ask full name then display the record
     if user_input ==2:
-        search= input("Enter Your name to search for your infos ")
+        search= input("Enter Your name to search for your infos:  ")
         print(dict.get(search))
         print(dict.get("Age"))
         print(dict.get("Address"))
         print(dict.get("Email"))
-        break
 #- Option 3: Ask the user if want to exit or retry.
     if user_input==3:
         question= input("exit? (y/n)")
