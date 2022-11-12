@@ -15,24 +15,34 @@
 
 # - Display a menu of options
 my_dict = {}
-
+my_dict2= my_dict
+my_dict2={}
 
 print("MENU")
 print ("1 = Add an Item")
 print ("2 = Search")
 print ("3 = Exit")
 
-
-
+# - Allow user to select item in the menu (check if valid)
 print()
 user_input= int(input("pick a number: "))
 
-if user_input ==1:
-    for i in range (4):
-        line1 = input("")
-        line2 = input("")
-        my_dict[line1] = line2
-        my_dict[line1] = line2
+# - Perform the selected option
+# - Option 1: Ask personal data for contact tracing (Listed are sample only, add more)
+# Use dictionary to store the info
+# Use the full name as key
+while True:
+    if user_input ==1:
+       for i in range (4):
+            line1 = input("")
+            line2 = input("")
+            my_dict[line1] = line2
+            print ("SAVED!")
+    if user_input ==2:
+        search= input("keyword")
+        print(my_dict2.keys(search))
+    if user_input==3:
+        question= input("exit? (y/n)")
+        if question == "y":
+            break
 
-print(my_dict)
-            
