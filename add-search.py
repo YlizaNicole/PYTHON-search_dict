@@ -14,11 +14,25 @@
 # - Option 3: Ask the user if want to exit or retry.
 
 # - Display a menu of options
+my_dict = {}
 
-operation = input('''
-    MENU
-    [1] 1 = Add an Item 
-    [2] "2 = Search"
-    [3] "3 = Exit"
-    ''')
-print(operation)
+
+print("MENU")
+print ("1 = Add an Item")
+print ("2 = Search")
+print ("3 = Exit")
+
+
+
+print()
+user_input= int(input("pick a number: "))
+
+if user_input ==1:
+    for i in range (4):
+        line1 = input("")
+        line2 = input("")
+        my_dict[line1] = line2
+        my_dict[line1] = line2
+
+print(my_dict)
+            
