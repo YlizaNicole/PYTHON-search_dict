@@ -13,6 +13,9 @@ def load_dict():
                 saved_dict = s['Dict']  
                 return saved_dict   
 dict = load_dict() 
+data= list(dict.values())
+
+
 # - Display a menu of options
 print("MENU")
 print ("1 = Add an Item")
@@ -21,7 +24,6 @@ print ("3 = Exit")
 
 # - Allow user to select item in the menu (check if valid)
 
-
 # - Perform the selected option
 # - Option 1: Ask personal data for contact tracing (Listed are sample only, add more)
 while True:
@@ -29,11 +31,13 @@ while True:
     user_input= int(input("pick a number: "))
     if user_input ==1: 
         ask = input('add item(y/n): ') 
+        print("Please Enter your Your [Name, Age, Email, Location,] First then tag it")
         if ask == 'y':
-            keywords = input('keys: ')
-            Values = input('values: ')
-            dict[keywords] = Values
-            save_dict(dict)
+            for i in range (4):
+                keywords = input('keys: ')
+                Values = input('values: ')
+                dict[keywords] = Values
+                save_dict(dict)
         elif ask == 'n':
             print(dict)  
         print("SAVED!")
@@ -42,7 +46,14 @@ while True:
     if user_input ==2:
         search= input("Search an Keyword: ")
         print(dict.get(search))
-        break
+        print(dict.get("Age"))
+        print(dict.get("Address"))
+        print(dict.get("Email"))
+        
+      
+       
+       
+     
 #- Option 3: Ask the user if want to exit or retry.
     if user_input==3:
         question= input("exit? (y/n)")
